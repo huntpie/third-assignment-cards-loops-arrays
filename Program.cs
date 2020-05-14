@@ -29,13 +29,13 @@ namespace third_assignment_cards_loops_arrays
     static void Main(string[] args)
     {
 
-      //Vegas Program with Adventure Mode Activated
-      //Make trumps 1, 11 , 12, 13
+      //Vegas Program with
+      //declare suits and faces
       var suitsArray = new string[] { " of Hearts, ", " of Diamonds, ", " of Clubs, ", " of Spades, " };
       var numberOfCardsArray = new string[] { "Ace", "2", "3", "4", "5", "6", "7",
       "8", "9", "10", "Jack", "Queen", "King" };
 
-      //combine hearts with cards
+      //make deck List and for loops
       var deckList = new List<string>() { " " };
       for (var dex = 0; dex < suitsArray.Length; dex++)
       {
