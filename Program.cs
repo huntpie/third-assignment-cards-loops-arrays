@@ -5,33 +5,12 @@ namespace third_assignment_cards_loops_arrays
   class Program
   {
 
-    static Random randomNumber = new Random();
-    /*static void ShuffleCards()
-    {
-      //Shuffle decklist
-
-      for (var firstIndex = 1; firstIndex < deck - 1; firstIndex++)
-      {
-        var yates = randomNumber.Next(deck.Length - firstIndex);
-        var firstValue = deck[firstIndex];
-        deck[firstIndex] = deck[yates];
-        deck[yates] = firstValue;
-      }
-
-
-
-      string endShuffleLine = "\nDone Shuffling! Here are the top two cards! \n";
-      //Console.Write(topTwoCards);
-      Console.Write(endShuffleLine);
-
-    }*/
-
     static void Main(string[] args)
     {
 
       //Vegas Program with
       //declare suits and faces
-      var suitsArray = new string[] { " of Hearts, ", " of Diamonds, ", " of Clubs, ", " of Spades, " };
+      var suitsArray = new string[] { " of Hearts. ", " of Diamonds. ", " of Clubs. ", " of Spades. " };
       var numberOfCardsArray = new string[] { "Ace", "2", "3", "4", "5", "6", "7",
       "8", "9", "10", "Jack", "Queen", "King" };
 
@@ -52,12 +31,30 @@ namespace third_assignment_cards_loops_arrays
       deckList.ForEach(Console.Write);
       string programShuffleLine = "\nNow it is time to shuffle the deck.\n";
       Console.Write(programShuffleLine);
-      //ShuffleCards();
+      ShuffleCards(deckList);
+      Console.Write("Here are the top two cards!\n The top card is the " + deckList[0] + "The second card is the "
+          + deckList[1]);
 
       //Epic War Game
 
 
     }
+    static Random randomNumber = new Random();
+    static void ShuffleCards(System.Collections.Generic.List<string> deckList)
+    {
+
+      for (var firstIndex = 1; firstIndex < deckList.Count - 1; firstIndex++)
+      {
+        int yates = randomNumber.Next(deckList.Count - firstIndex);
+        var firstValue = deckList[firstIndex];
+        deckList[firstIndex] = deckList[yates];
+        deckList[yates] = firstValue;
+      }
+
+
+
+    }
+
 
   }
 
